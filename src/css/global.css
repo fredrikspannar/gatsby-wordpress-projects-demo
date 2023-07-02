@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .project-excerpt div, .project-excerpt p { display: inline; }
+    .project-excerpt a { @apply underline; }
+}
