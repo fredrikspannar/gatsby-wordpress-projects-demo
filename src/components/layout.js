@@ -19,22 +19,14 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <div className="global-wrapper bg-black h-screen w-screen" data-is-root-path={isHomePage}>
-      <div className="container mx-auto w-3/4 bg-zinc-900 h-full p-6 text-white rounded-xl flex flex-col">
+    <div className="global-wrapper h-full mb-6 mt-6" data-is-root-path={isHomePage}>
+      <div className="container mx-auto w-3/4 bg-zinc-900 p-6 text-white rounded-xl flex flex-col">
 
         <header className="global-header pb-6 text-center border-b-2 border-blue-500">
             <span className="font-bold text-4xl">{title}</span>
         </header>
 
         <main className="mt-20">{children}</main>
-
-        {/*<footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-          {` `}
-          And <a href="https://wordpress.org/">WordPress</a>
-        </footer>*/}
 
       </div>
     </div>

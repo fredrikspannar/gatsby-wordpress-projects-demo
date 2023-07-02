@@ -11,9 +11,7 @@ import parse from "html-react-parser"
 import "../css/@wordpress/block-library/build-style/style.css"
 import "../css/@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -23,34 +21,31 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
-      <Seo title={post.title} description={post.excerpt} />
 
       <article
-        className="blog-post"
+        className="blog-post pb-12"
         itemScope
         itemType="http://schema.org/Article"
       >
+        <p className="mb-6 return-link"><Link to="/">&lt; Back</Link></p>
         <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          <p>{post.date}</p>
+          <h1 itemProp="headline" className="text-4xl">{parse(post.title)}</h1>
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.data && (
             <GatsbyImage
               image={featuredImage.data}
               alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-              className="max-w-md max-h-md"
+              style={{ marginBottom: 32, marginTop: 16 }}
             />
           )}
         </header>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+          <section itemProp="articleBody mb-6">{parse(post.content)}</section>
         )}
 
-
+        <p className="mt-6 return-link"><Link to="/">&lt; Back</Link></p>
       </article>
 
     </Layout>
