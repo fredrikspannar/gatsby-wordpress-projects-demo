@@ -41,6 +41,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
               image={featuredImage.data}
               alt={featuredImage.alt}
               style={{ marginBottom: 50 }}
+              className="max-w-md max-h-md"
             />
           )}
         </header>
@@ -49,40 +50,9 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
 
-        <hr />
 
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.uri} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
-            )}
-          </li>
-
-          <li>
-            {next && (
-              <Link to={next.uri} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
