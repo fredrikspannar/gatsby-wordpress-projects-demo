@@ -1,13 +1,12 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import parse from "html-react-parser"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 const ProjectPosts = () => {
     // GraphQL query by slug, get data by object deconstruction into constant "content"
     const data = useStaticQuery(graphql`
             query ProjectPostsQuery {
-                allWpPost {
+                allWpPost(sort: { fields: [date], order: DESC }) {
                     edges {
                         node {
                             id
@@ -41,13 +40,13 @@ const ProjectPosts = () => {
                 const id = item?.node?.id || index;
 
                 return (
-                    <div className="p-4 bg-zinc-600 flex justify-between mt-2 rounded-lg" key={id}>
+                    <div className="p-4 bg-zinc-600 flex justify-between mt-2 mb-6 rounded-lg" key={id}>
                         <div className="project-content">
                             <div className="font-bold mb-2">{parse(title)}</div>
                             <div className="italic project-excerpt">{parse(excerpt)}</div>
                         </div>
                         <div className="project-image ml-6">
-                            { featuredImage && <img src={featuredImage} alt={`featured ${parse(title)}`} /> }
+                            { featuredImage && <img src={featuredImage} className="w-[600px] h-[auto]" alt={`featured ${parse(title)}`} /> }
                         </div>
                     </div>
                 )
