@@ -41,9 +41,7 @@
     "lodash": "^4.17.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "typeface-merriweather": "1.1.13",
-    "typeface-montserrat": "1.1.13"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
