@@ -33,11 +33,12 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.data && (
-            <GatsbyImage
-              image={featuredImage.data}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 32, marginTop: 16 }}
-            />
+              <GatsbyImage
+                image={featuredImage.data}
+                alt={featuredImage.alt}
+                style={{ marginBottom: 32, marginTop: 16 }}
+              />
+  
           )}
         </header>
 
