@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import parse from "html-react-parser"
 
 const ProjectPosts = () => {
@@ -12,6 +12,7 @@ const ProjectPosts = () => {
                             id
                             title
                             excerpt
+                            slug
                             featuredImage {
                                 node {
                                   publicUrl
@@ -38,12 +39,14 @@ const ProjectPosts = () => {
                 const title = item?.node?.title || null;
                 const excerpt = item?.node?.excerpt || null;
                 const id = item?.node?.id || index;
+                const slug = item?.node?.slug || "";
 
                 return (
                     <div className="p-4 bg-zinc-600 flex flex-col md:flex-row justify-between mt-4 mb-8 rounded-lg" key={id}>
                         <div className="project-content">
                             <div className="font-bold mb-2">{parse(title)}</div>
                             <div className="italic project-excerpt">{parse(excerpt)}</div>
+                            <div className="mt-6"><Link className="bg-zinc-800 py-3 px-6 rounded hover:opacity-60" to={`/${slug}`}>Read more &gt;</Link ></div>
                         </div>
                         <div className="project-image ml-6 mt-8 lg:mt-0">
                             { featuredImage && <img src={featuredImage} className="w-[600px] h-[auto]" alt={`featured ${parse(title)}`} /> }

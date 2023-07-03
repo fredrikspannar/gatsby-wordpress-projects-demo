@@ -6,9 +6,9 @@
     body { @apply bg-black; }
     .project-excerpt { @apply mt-4; }
     .project-excerpt div, .project-excerpt p { display: inline; }
-    .project-excerpt a { @apply underline  hover:opacity-60; }
-    
-    article a { @apply underline hover:opacity-60; }
-    article p { @apply mt-4 mb-6 lg:mb-8; }
+    .project-content .project-excerpt a { display: none !important; }
+
+    article section a { @apply underline hover:opacity-60; }
+    article section p { @apply mt-4 mb-6 lg:mb-8; }
     .index-page, article { @apply pb-16 pl-4 pr-4 lg:pl-8 lg:pr-8; }
 }
