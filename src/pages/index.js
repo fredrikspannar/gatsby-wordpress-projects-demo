@@ -16,8 +16,10 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <div dangerouslySetInnerHTML={{ __html:content}} />
-            <ProjectPosts />
+            <div className="index-page">
+                <div dangerouslySetInnerHTML={{ __html:content}} />
+                <ProjectPosts />
+            </div>
         </Layout>
     )
   
