@@ -33,7 +33,7 @@ const ProjectPosts = () => {
 
      return (
         <>
-            <h3 className="text-2xl mt-10 mb-2">Projects</h3>
+            <h3 className="text-2xl font-bold mt-10 mb-2">Projects</h3>
             {posts && posts.map((item, index) => {
                 const featuredImage = item?.node?.featuredImage?.node?.localFile?.childrenImageSharp?.gatsbyImageData || item?.node?.featuredImage?.node?.publicUrl;
                 const title = item?.node?.title || null;
@@ -53,7 +53,7 @@ const ProjectPosts = () => {
                             { featuredImage && <img src={featuredImage} className="w-[600px] h-[auto]" alt={`featured ${parse(title)}`} /> }
                         </div>
                       </div>
-                      <div className="divider w-full h-6"></div>
+                      <div className="divider w-full h-6 mt-10 mb-10"></div>
                     </>
                 )
             })}

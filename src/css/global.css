@@ -33,3 +33,11 @@
         background-size: contain;
     }
 }
+
+h2.wp-block-heading {
+    @apply text-3xl font-bold mb-6;
+}
+
+.wp-block-column p {
+    @apply mb-4;
+}
