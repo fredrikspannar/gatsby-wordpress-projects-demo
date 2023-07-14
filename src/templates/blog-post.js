@@ -27,7 +27,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         itemScope
         itemType="http://schema.org/Article"
       >
-        <p className="mb-6"><Link className="bg-zinc-800 py-3 px-6 rounded hover:opacity-60" to="/">&lt; Back</Link></p>
+        <p className="mb-6"><Link className="bbg-yellow-700 py-3 px-6 rounded-lg text-white hover:opacity-60" to="/">&lt; Back</Link></p>
         <header>
           <h1 itemProp="headline" className="text-4xl">{parse(post.title)}</h1>
 
@@ -46,7 +46,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <section itemProp="articleBody mb-6">{parse(post.content)}</section>
         )}
 
-        <p className="mt-20"><Link className="bg-zinc-800 py-3 px-6 rounded hover:opacity-60" to="/">&lt; Back</Link></p>
+        <p className="mt-20"><Link className="bg-yellow-700 py-3 px-6 rounded-lg text-white hover:opacity-60" to="/">&lt; Back</Link></p>
       </article>
 
     </Layout>
