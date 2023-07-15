@@ -32,6 +32,10 @@
         background-position: center;
         background-size: contain;
     }
+
+    a {
+        @apply hover:underline;
+    }
 }
 
 h2.wp-block-heading {
