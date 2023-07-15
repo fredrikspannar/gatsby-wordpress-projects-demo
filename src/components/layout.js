@@ -20,7 +20,7 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <div className="global-wrapper h-full mb-6 mt-6" data-is-root-path={isHomePage}>
-      <div className="container mx-auto w-3/4 content-bg 0 p-6 rounded-lg flex flex-col">
+      <div className="container mx-auto w-[90%] mb:w-3/4 content-bg 0 p-6 rounded-lg flex flex-col">
 
         <header className="global-header pb-6 text-center border-b-2 border-blue-500">
             <span className="font-bold text-4xl">{title}</span>
