@@ -69,7 +69,7 @@ const ProjectPosts = () => {
                             <div className="flex">
                                 {categories.length > 0 && (
                                     <div className="mb-4 mt-2">
-                                        Categor{categories.length == 1 ? "y" : "ies"}: 
+                                        Categor{categories.length === 1 ? "y" : "ies"}: 
                                         {categories.map((category, index) => <span className="px-2 py-1 ml-1 bg-slate-500 text-white rounded-lg" key={`category-${index}`}>{category}</span>)}
                                     </div>
                                 )}
