@@ -66,15 +66,15 @@ const ProjectPosts = () => {
                       <div className="p-2 mb:p-4 flex flex-col md:flex-row justify-between mt-4 mb-8 rounded-lg border-2 bg-slate-400 border-slate-400 hard-shadow-10px" key={id}>
                         <div className="project-content">
                             <div className="font-bold text-lg mb-2">{parse(title)}</div>
-                            <div className="flex">
+                            <div className="flex flex-col lg:flex-row">
                                 {categories.length > 0 && (
-                                    <div className="mb-4 mt-2">
+                                    <div className="mb-4 mt-2 flex space-y-1">
                                         Categor{categories.length === 1 ? "y" : "ies"}: 
                                         {categories.map((category, index) => <span className="px-2 py-1 ml-1 bg-slate-500 text-white rounded-lg" key={`category-${index}`}>{category}</span>)}
                                     </div>
                                 )}
                                 {tags.length > 0 && (
-                                    <div className="mb-4 mt-2 ml-4">
+                                    <div className="mb-4 lg:mt-2 lg:ml-4 flex space-y-1 lg:space-y-0 flex-col lg:flex-row">
                                         Tech: 
                                         {tags.map((tag, index) => <span className="px-2 py-1 ml-1 bg-stone-600 text-white rounded-lg" key={`category-${index}`} >{tag}</span>)}
                                     </div>

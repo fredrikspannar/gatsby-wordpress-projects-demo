@@ -42,15 +42,15 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         <header>
           <h1 itemProp="headline" className="text-4xl">{parse(post.title)}</h1>
 
-          <div className="flex mt-4">
+          <div className="flex flex-col lg:flex-row mt-4">
               {categories.length > 0 && (
-                  <div className="mb-4 mt-2">
+                  <div className="mb-4 mt-2 flex space-y-1">
                       Categor{categories.length === 1 ? "y" : "ies"}: 
                       {categories.map((category, index) => <span className="px-2 py-1 ml-1 bg-slate-500 text-white rounded-lg" key={`category-${index}`}>{category}</span>)}
                   </div>
               )}
               {tags.length > 0 && (
-                  <div className="mb-4 mt-2 ml-4">
+                  <div className="mb-4 lg:mt-2 lg:ml-4 flex space-y-1 lg:space-y-0 flex-col lg:flex-row">
                       Tech: 
                       {tags.map((tag, index) => <span className="px-2 py-1 ml-1 bg-stone-600 text-white rounded-lg" key={`category-${index}`} >{tag}</span>)}
                   </div>
